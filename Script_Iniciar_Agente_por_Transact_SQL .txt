@@ -1,0 +1,20 @@
+
+-- To allow advanced options to be changed.
+EXEC sp_configure 'show advanced options', 1
+GO
+-- To update t he currently configured value for advanced options.
+RECONFIGURE WITH OVERRIDE
+GO
+-- To enable the feature.
+EXEC sp_configure 'xp_cmdshell', 1
+GO
+-- To update the currently configured value for this feature.
+RECONFIGURE WITH OVERRIDE
+GO
+
+-- Este es el comando que termina iniciando el Agente
+xp_cmdshell 'net start SQLSERVERAGENT'
+
+--Para instancia 2005 nombrada
+--
+xp_cmdshell 'net start SqlAGENT$WINCC' -- Para el caso que la instancia se llama WINCC
