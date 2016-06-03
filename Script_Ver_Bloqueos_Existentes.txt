@@ -1,16 +1,4 @@
-SELECT spid, 
-lastwaittype, 
-dbid,
-login_time,
-last_batch,
-open_tran,
-program_name,                                                                                                                   
-hostname,                                                                                                                       
-loginame
-FROM master..sysprocesses
-WHERE blocked <> 0
-
---select * from master..sysprocesses where blocked <> 0
+select * from master..sysprocesses where blocked <> 0
 
 
 
