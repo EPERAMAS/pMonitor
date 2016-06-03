@@ -1,3 +1,4 @@
-SELECT * FROM :: fn_trace_getinfo(default) -- consultamos las trazas que se encuentran corriendo sobre el servidor
+-- consultamos las trazas que se encuentran corriendo sobre el servidor
+SELECT * FROM :: sys.fn_trace_getinfo(default) 
 sp_trace_setstatus 2, 0 -- con "0" paramos la traza - stop	
 sp_trace_setstatus 2, 2 --con "2" cerramos la traza -close
